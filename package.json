@@ -1,0 +1,26 @@
+{
+  "name": "simplevitemodulefederation",
+  "version": "1.0.0",
+  "description": "Simple React App built with Module Federation",
+  "author": "Yvson Moura",
+  "license": "ISC",
+  "workspaces": [
+    "host",
+    "remote"
+  ],
+  "scripts": {
+    "build": "pnpm --parallel --filter \"./**\" build",
+    "build:watch": "pnpm --parallel --filter \"./**\" build --watch",
+    "serve": "pnpm --parallel --filter \"./**\" preview",
+    "build:remotes": "pnpm --parallel --filter \"./remote\" build",
+    "serve:remotes": "pnpm --parallel --filter \"./remote\" serve",
+    "dev:hosts": "pnpm --filter \"./host\" dev",
+    "stop": "kill-port --port 4173,4174",
+    "clean": "rm -rf ./node_modules **/node_modules ./package-lock.json **/package-lock.json **/dist"
+  },
+  "devDependencies": {
+    "@originjs/vite-plugin-federation": "^1.3.5",
+    "http-server": "^14.1.1",
+    "kill-port": "^2.0.1"
+  }
+}
