@@ -12,6 +12,10 @@ npm run build
 npm run serve
 ```
 
+To check the applications running, go to:
 
+**Host:**
+> localhost:4173
 
-
+**Remote:**
+> localhost:4174
